@@ -77,13 +77,13 @@ const styles = StyleSheet.create({
     },
 
     menuImg: {
-        width: 30,
-        height: 30,
+        width: 35,
+        height: 35,
     },
 
     weatheType: {
-        fontSize: 17,
+        fontSize: 20,
         paddingLeft: 35,
-        fontWeight: '600'
+        fontWeight: '500'
     }
 });
