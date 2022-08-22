@@ -1,8 +1,8 @@
 import { View, Text, Image, TouchableOpacity, Animated, StyleSheet } from 'react-native'
 import React from 'react'
-import Menu from '../assets/menu.png'
 import CityInfo from '../components/CityInfo'
 import WeatherInfo from '../components/WeatherInfo'
+import Menu from '../assets/icons/menu.png'
 
 
 export default function Home({ scaleValue, offsetValue, closeButtonOffset, showMenu, setShowMenu, darkMode }) {
@@ -45,21 +45,19 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
                         setShowMenu(!showMenu);
                     }}
                 >
-                    <Image
-                        source={Menu}
+                    <Image source={Menu}
                         style={{
                             ...styles.menuImg,
                             tintColor: darkMode ? '#2f2f2f' : '#eee',
                         }}
                     />
-
                 </TouchableOpacity>
 
                 <Text style={{ ...styles.weatheType, color: darkMode ? '#2f2f2f' : '#eee', }}>Sunny</Text>
             </View>
 
             <CityInfo darkMode={darkMode}></CityInfo>
-            <WeatherInfo></WeatherInfo>
+            <WeatherInfo darkMode={darkMode}></WeatherInfo>
 
 
         </Animated.View>

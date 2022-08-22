@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { useRef, useState } from 'react';
 import { Animated, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import DarkMode from './assets/mode.png'
 import Home from './screens/Home';
+import DarkMode from './assets/icons/mode.png'
 
 
 
