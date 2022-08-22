@@ -20,10 +20,12 @@ export default function App() {
 
   return (
     <SafeAreaView style={{
-      ...styles.manuContainer, backgroundColor: darkMode ? '#eee' : '#2f2f2f',
+      ...styles.menuContainer, backgroundColor: darkMode ? '#eee' : '#2f2f2f',
     }}>
       <StatusBar style={darkMode ? "dark" : 'light'} />
 
+
+      {/* ------- Drawer Overlay ------- */}
       <View style={{ flex: 1, justifyContent: 'center', marginHorizontal: 10 }}>
         <View style={{ margin: 20 }}>
 
@@ -40,6 +42,7 @@ export default function App() {
       </View>
 
 
+      {/* ------- Home Page ------- */}
       <Animated.View style={{
         ...styles.animatedScreen,
         backgroundColor: darkMode ? '#eee' : '#2f2f2f',
@@ -66,7 +69,7 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  manuContainer: {
+  menuContainer: {
     flex: 1,
   },
 
