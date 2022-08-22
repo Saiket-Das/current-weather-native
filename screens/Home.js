@@ -3,6 +3,7 @@ import React from 'react'
 import CityInfo from '../components/CityInfo'
 import WeatherInfo from '../components/WeatherInfo'
 import Menu from '../assets/icons/menu.png'
+import WindInfo from '../components/WindInfo'
 
 
 export default function Home({ scaleValue, offsetValue, closeButtonOffset, showMenu, setShowMenu, darkMode }) {
@@ -58,6 +59,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
 
             <CityInfo darkMode={darkMode}></CityInfo>
             <WeatherInfo darkMode={darkMode}></WeatherInfo>
+            <WindInfo darkMode={darkMode}></WindInfo>
 
 
         </Animated.View>

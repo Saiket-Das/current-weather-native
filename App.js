@@ -27,15 +27,15 @@ export default function App() {
 
       {/* ------- Drawer Overlay ------- */}
       <View style={{ flex: 1, justifyContent: 'center', marginHorizontal: 10 }}>
-        <View style={{ margin: 20 }}>
+        <View style={{ margin: 10 }}>
 
           <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}
             onPress={() => {
               setDarkMode(!darkMode)
               setShowMenu(!showMenu)
             }}>
-            <Image source={DarkMode} style={{ width: 25, height: 25, tintColor: darkMode ? '#2f2f2f' : '#eee' }} />
-            <Text style={{ marginLeft: 10, fontSize: 16, color: darkMode ? '#2f2f2f' : '#eee' }}>Dark</Text>
+            <Image source={DarkMode} style={{ ...styles.modeImg, tintColor: darkMode ? '#2f2f2f' : '#eee' }} />
+            <Text style={{ ...styles.modeText, color: darkMode ? '#2f2f2f' : '#eee' }}>Dark</Text>
           </TouchableOpacity>
 
         </View>
@@ -46,7 +46,7 @@ export default function App() {
       <Animated.View style={{
         ...styles.animatedScreen,
         backgroundColor: darkMode ? '#eee' : '#2f2f2f',
-        shadowColor: darkMode ? '#2f2f2f' : '#eee',
+        shadowColor: darkMode ? '#2f2f2f' : '#515151',
         transform: [
           { scale: scaleValue },
           { translateX: offsetValue },
@@ -83,8 +83,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 20,
     borderRadius: 15,
-    shadowOffset: { width: -9, height: 0 },
+    shadowOffset: { width: -10, height: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 10,
+  },
+
+  modeImg: {
+    width: 28,
+    height: 28,
+  },
+
+  modeText: {
+    marginLeft: 10,
+    fontSize: 16,
+    fontWeight: '500'
   }
 });

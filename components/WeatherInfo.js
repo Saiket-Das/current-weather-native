@@ -10,7 +10,7 @@ import { StyleSheet } from 'react-native';
 export default function WeatherInfo({ darkMode }) {
     return (
         <View style={styles.WeatherInfoCon}>
-            <Image style={{ width: 100, height: 100 }} source={Weather} />
+            <Image style={styles.WeatherImg} source={Weather} />
 
             <Divider width={2} orientation='vertical' />
 
@@ -47,6 +47,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: 30
+    },
+
+    WeatherImg: {
+        width: 100,
+        height: 100
     },
 
     degree: {
