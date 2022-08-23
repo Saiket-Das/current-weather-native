@@ -5,6 +5,7 @@ import WeatherInfo from '../components/WeatherInfo'
 import Menu from '../assets/icons/menu.png'
 import WindInfo from '../components/WindInfo'
 import SearchBar from '../components/SearchBar'
+// import Geolocation from 'react-native-geolocation-service';
 
 
 export default function Home({ scaleValue, offsetValue, closeButtonOffset, showMenu, setShowMenu, darkMode }) {
@@ -14,29 +15,22 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
 
     console.log('---------------<>-----------------', weatheInfo)
     console.log('City Name:', weatheInfo.name)
-    // console.log('Weather Info:', weatheInfo?.weather[0]?.main)
     console.log('Weather Temp:', weatheInfo?.main?.temp)
     console.log('Weather Hum:', weatheInfo?.main?.humidity)
     console.log('Wind Speed:', weatheInfo?.wind?.speed)
 
-    // "dt": 1661290693,
-    // "id": 1185241,
-    // "main": Object {
-    //   "feels_like": 304.92,
-    //   "humidity": 78,
-    //   "pressure": 1005,
-    //   "temp": 301.14,
-    //   "temp_max": 301.14,
-    //   "temp_min": 301.14,
-    // },
-    // "name": "Dhaka",
-    // "sys": Object {
-    //   "country": "BD",
-    //   "id": 9145,
-    //   "sunrise": 1661297843,
-    //   "sunset": 1661343884,
-    //   "type": 1,
-    // },
+
+    // Geolocation.getCurrentPosition(
+    //     (position) => {
+    //         console.log(position);
+    //     },
+    //     (error) => {
+    //         // See error code charts below.
+    //         console.log(error.code, error.message);
+    //     },
+    //     { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+    // );
+
 
     const getWeatheInfo = () => {
         const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.GET_WAETHER_API_KEY}`;
@@ -97,8 +91,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
                     />
                 </TouchableOpacity>
 
-                <Text style={{ ...styles.weatheType, color: darkMode ? '#2f2f2f' : '#FFFFFF', }}>{weatheInfo?.weather[0]?.main}</Text>
-
+                <Text style={{ ...styles.weatheType, color: darkMode ? '#2f2f2f' : '#FFFFFF', }}></Text>
 
 
             </View>

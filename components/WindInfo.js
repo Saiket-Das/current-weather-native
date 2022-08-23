@@ -11,9 +11,9 @@ export default function WindInfo({ weatheInfo, darkMode }) {
     return (
         <View style={styles.WindInfoCon}>
 
-            <WindDetails image={KMH} textInfo={Math.round(weatheInfo.wind?.speed) + 'KM/hr'} darkMode={darkMode} />
-            <WindDetails image={Cloud} textInfo='75%' darkMode={darkMode} />
-            <WindDetails image={WaterDrop} textInfo='85%' darkMode={darkMode} />
+            <WindDetails image={KMH} textInfo={Math.round(weatheInfo.wind?.speed * 1.60934) + 'KM/hr'} darkMode={darkMode} />
+            <WindDetails image={Cloud} textInfo={weatheInfo?.clouds?.all + '%'} darkMode={darkMode} />
+            <WindDetails image={WaterDrop} textInfo={weatheInfo?.main?.humidity + '%'} darkMode={darkMode} />
         </View>
     )
 };
