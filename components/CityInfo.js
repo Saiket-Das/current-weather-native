@@ -1,7 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function CityInfo({ darkMode }) {
+
+
+export default function CityInfo({ weatheInfo, darkMode }) {
 
     var today = new Date();
     const date = today.getDate()
@@ -12,23 +14,24 @@ export default function CityInfo({ darkMode }) {
 
     return (
         <View style={styles.CityDetails}>
+
             <Text style={{
                 ...styles.today,
-                color: darkMode ? '#2f2f2f' : '#eee',
+                color: darkMode ? '#2f2f2f' : '#FFFFFF',
             }}>
                 Today
             </Text>
 
             <Text style={{
                 ...styles.city,
-                color: darkMode ? '#2f2f2f' : '#eee',
+                color: darkMode ? '#2f2f2f' : '#FFFFFF',
             }}>
-                London
+                {weatheInfo?.name}
             </Text>
 
             <Text style={{
                 ...styles.date,
-                color: darkMode ? '#2f2f2f' : '#eee',
+                color: darkMode ? '#2f2f2f' : '#FFFFFF',
             }}>
                 {currentDate}
             </Text>

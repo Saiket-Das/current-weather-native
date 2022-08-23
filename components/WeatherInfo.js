@@ -7,7 +7,11 @@ import { StyleSheet } from 'react-native';
 
 
 
-export default function WeatherInfo({ darkMode }) {
+export default function WeatherInfo({ weatheInfo, darkMode }) {
+
+    const tempK = (weatheInfo?.main?.temp - 273).toFixed(2);
+    const tempC = Math.round(tempK)
+
     return (
         <View style={styles.WeatherInfoCon}>
             <Image style={styles.WeatherImg} source={Weather} />
@@ -17,18 +21,17 @@ export default function WeatherInfo({ darkMode }) {
             <View style={{ alignItems: 'center' }}>
                 <Text style={{
                     ...styles.degree,
-                    color: darkMode ? '#2f2f2f' : '#eee',
-                }}
-                >
-                    14°
+                    color: darkMode ? '#2f2f2f' : '#FFFFFF',
+                }}>
+                    {tempC}°
                 </Text>
 
                 <Text style={{
                     ...styles.WeatherInfo,
-                    color: darkMode ? '#2f2f2f' : '#eee',
+                    color: darkMode ? '#2f2f2f' : '#FFFFFF',
                 }}
                 >
-                    Rainy Shower
+                    {weatheInfo?.weather[0]?.description}
                 </Text>
 
             </View>
@@ -61,6 +64,7 @@ const styles = StyleSheet.create({
 
     WeatherInfo: {
         fontSize: 14,
-        opacity: 0.8
+        opacity: 0.8,
+        textTransform: 'capitalize'
     }
 })

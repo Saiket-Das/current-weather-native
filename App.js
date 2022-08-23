@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={{
-      ...styles.menuContainer, backgroundColor: darkMode ? '#eee' : '#2f2f2f',
+      ...styles.menuContainer, backgroundColor: darkMode ? '#FFFFFF' : '#2f2f2f',
     }}>
       <StatusBar style={darkMode ? "dark" : 'light'} />
 
@@ -34,8 +34,8 @@ export default function App() {
               setDarkMode(!darkMode)
               setShowMenu(!showMenu)
             }}>
-            <Image source={DarkMode} style={{ ...styles.modeImg, tintColor: darkMode ? '#2f2f2f' : '#eee' }} />
-            <Text style={{ ...styles.modeText, color: darkMode ? '#2f2f2f' : '#eee' }}>Dark</Text>
+            <Image source={DarkMode} style={{ ...styles.modeImg, tintColor: darkMode ? '#2f2f2f' : '#FFFFFF' }} />
+            <Text style={{ ...styles.modeText, color: darkMode ? '#2f2f2f' : '#FFFFFF' }}>Dark</Text>
           </TouchableOpacity>
 
         </View>
@@ -45,7 +45,7 @@ export default function App() {
       {/* ------- Home Page ------- */}
       <Animated.View style={{
         ...styles.animatedScreen,
-        backgroundColor: darkMode ? '#eee' : '#2f2f2f',
+        backgroundColor: darkMode ? '#FFFFFF' : '#2f2f2f',
         shadowColor: darkMode ? '#2f2f2f' : '#515151',
         transform: [
           { scale: scaleValue },

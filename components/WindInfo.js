@@ -5,15 +5,15 @@ import Cloud from '../assets/icons/cloud.png'
 import WaterDrop from '../assets/icons/water-drop.png'
 import { StyleSheet } from 'react-native'
 
-export default function WindInfo({ darkMode }) {
+
+
+export default function WindInfo({ weatheInfo, darkMode }) {
     return (
         <View style={styles.WindInfoCon}>
 
-            <WindDetails image={KMH} textInfo='19KM/hr' darkMode={darkMode} />
+            <WindDetails image={KMH} textInfo={Math.round(weatheInfo.wind?.speed) + 'KM/hr'} darkMode={darkMode} />
             <WindDetails image={Cloud} textInfo='75%' darkMode={darkMode} />
             <WindDetails image={WaterDrop} textInfo='85%' darkMode={darkMode} />
-
-
         </View>
     )
 };
@@ -21,7 +21,7 @@ export default function WindInfo({ darkMode }) {
 
 const WindDetails = ({ image, textInfo, darkMode }) => (
     <View style={{ alignItems: 'center' }}>
-        <View style={{ ...styles.WindDetailsImgCon, backgroundColor: darkMode ? '#e4e4e4' : '#3e3e42' }}>
+        <View style={{ ...styles.WindDetailsImgCon, backgroundColor: darkMode ? '#E8E8E8' : '#3e3e42' }}>
             <Image style={styles.kmhImg} source={image} />
         </View>
         <Text style={{ ...styles.WindDetailsText, color: darkMode ? '#2f2f2f' : '#eee', }}>{textInfo}</Text>
