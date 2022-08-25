@@ -21,7 +21,7 @@ export default function WindInfo({ weatheInfo, darkMode }) {
 
 const WindDetails = ({ image, textInfo, darkMode }) => (
     <View style={{ alignItems: 'center' }}>
-        <View style={{ ...styles.WindDetailsImgCon, backgroundColor: darkMode ? '#E8E8E8' : '#3e3e42' }}>
+        <View style={{ ...styles.WindDetailsImgCon, backgroundColor: darkMode ? '#f3f3f3' : '#3e3e42' }}>
             <Image style={styles.kmhImg} source={image} />
         </View>
         <Text style={{ ...styles.WindDetailsText, color: darkMode ? '#2f2f2f' : '#eee', }}>{textInfo}</Text>
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 10,
     },
-
 
     kmhImg: {
         width: 30,

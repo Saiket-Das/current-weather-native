@@ -5,6 +5,7 @@ import WeatherInfo from '../components/WeatherInfo'
 import Menu from '../assets/icons/menu.png'
 import WindInfo from '../components/WindInfo'
 import SearchBar from '../components/SearchBar'
+import SunRiseAndSet from '../components/SunRiseAndSet'
 // import Geolocation from 'react-native-geolocation-service';
 
 
@@ -100,6 +101,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
             <CityInfo weatheInfo={weatheInfo} darkMode={darkMode}></CityInfo>
             <WeatherInfo weatheInfo={weatheInfo} darkMode={darkMode}></WeatherInfo>
             <WindInfo weatheInfo={weatheInfo} darkMode={darkMode}></WindInfo>
+            <SunRiseAndSet darkMode={darkMode}></SunRiseAndSet>
 
 
         </Animated.View>

@@ -17,20 +17,20 @@ export default function SearchBar({ setCityName, darkMode }) {
                 placeholder='Search City'
                 styles={{
                     textInput: {
-                        backgroundColor: darkMode ? '#E8E8E8' : '#FFFFFF',
+                        backgroundColor: darkMode ? '#f3f3f3' : '#FFFFFF',
                         borderRadius: 60,
                         fontWeight: "500",
                         marginTop: 3,
                     },
                     textInputContainer: {
-                        backgroundColor: darkMode ? '#E8E8E8' : '#FFFFFF',
+                        backgroundColor: darkMode ? '#f3f3f3' : '#FFFFFF',
                         borderRadius: 15,
                         flexDirection: "row",
                         alignItems: "center",
                         padding: 0,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        marginHorizontal: 20,
+                        // marginHorizontal: 20,
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'center'
