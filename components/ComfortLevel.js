@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
-import Sun from '../assets/icons/Sun.png'
+import { StyleSheet } from 'react-native'
 import { Image } from 'react-native'
 
+export default function ComfortLevel({ darkMode }) {
 
-export default function SunRiseAndSet({ darkMode }) {
     return (
         <View style={{
             ...styles.sunsetAndRiseCon,
@@ -67,9 +67,9 @@ export default function SunRiseAndSet({ darkMode }) {
 
                 </View>
 
-                <View style={{ ...styles.sunImgCon, backgroundColor: darkMode ? '#fafafa' : '#3e3e42' }}>
+                {/* <View style={{ ...styles.sunImgCon, backgroundColor: darkMode ? '#fafafa' : '#3e3e42' }}>
                     <Image style={{ width: 25, height: 25, }} source={Sun} />
-                </View>
+                </View> */}
 
             </View >
 
