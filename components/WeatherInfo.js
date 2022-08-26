@@ -31,7 +31,7 @@ export default function WeatherInfo({ weatheInfo, darkMode }) {
                     color: darkMode ? '#2f2f2f' : '#FFFFFF',
                 }}
                 >
-                    {weatheInfo?.weather[0].description || ''}
+                    {/* {weatheInfo?.weather[0].descripstion || ''} */}
                 </Text>
 
             </View>

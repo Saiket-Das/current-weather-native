@@ -25,6 +25,8 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
     console.log('Wind Speed:', weatheInfo?.wind?.deg)
 
 
+    // const weatherType = weatheInfo?.weather[0]?.main || '..'
+
     // Geolocation.getCurrentPosition(
     //     (position) => {
     //         console.log(position);
@@ -98,7 +100,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
                 </TouchableOpacity>
 
                 <Text style={{ ...styles.weatheType, color: darkMode ? '#2f2f2f' : '#FFFFFF', }}></Text>
-
+                {/* {weatheInfo?.weather[0]?.main || '..'} */}
             </View>
 
             <SearchBar setCityName={setCityName} darkMode={darkMode}></SearchBar>

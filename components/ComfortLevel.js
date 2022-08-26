@@ -1,9 +1,16 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { Image } from 'react-native'
+
+
 
 export default function ComfortLevel({ darkMode, weatheInfo }) {
+
+    const tempK = (weatheInfo?.main?.feels_like - 273).toFixed(2);
+    const feelLikeTempC = Math.round(tempK);
+
+    const visibilityKM = (weatheInfo?.visibility / 1000).toFixed(0);
+    // const feelLikeTempC = Math.round(tempK)
 
     return (
         <View style={{
@@ -33,7 +40,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
                             color: darkMode ? '#2f2f2f' : '#FFFFFF',
                             textAlign: 'center'
                         }}>
-                            72%
+                            {weatheInfo?.main?.humidity}%
                         </Text>
                         <Text style={{
                             ...styles.humidityText,
@@ -60,7 +67,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
                         <Text style={{
                             color: darkMode ? '#2f2f2f' : '#FFFFFF',
                         }}>
-                            Feels Like 10%
+                            Feels Like {feelLikeTempC}°
                         </Text>
                     </View>
 
@@ -68,7 +75,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
                         <Text style={{
                             color: darkMode ? '#2f2f2f' : '#FFFFFF',
                         }}>
-                            UV Index 00
+                            Visibility {visibilityKM}KM
                         </Text>
                     </View>
                 </View>
