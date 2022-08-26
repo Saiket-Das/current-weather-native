@@ -3,22 +3,20 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Image } from 'react-native'
 
-export default function ComfortLevel({ darkMode }) {
+export default function ComfortLevel({ darkMode, weatheInfo }) {
 
     return (
         <View style={{
-            ...styles.sunsetAndRiseCon,
+            ...styles.comfortLevelCon,
             backgroundColor: darkMode ? '#fafafa' : '#3e3e42',
         }}>
             <Text style={{
-                ...styles.sunsetAndRiseText, color: darkMode ? '#2f2f2f' : '#FFFFFF',
+                ...styles.comfortLevelText, color: darkMode ? '#2f2f2f' : '#FFFFFF',
             }}>
                 Comfort Level
             </Text>
 
             <View style={{ alignItems: 'center' }}>
-
-
 
                 {/* ---------- Linear Circle ---------- */}
 
@@ -46,18 +44,20 @@ export default function ComfortLevel({ darkMode }) {
                     </View>
 
 
-                    <View style={{ ...styles.sunImgCon, backgroundColor: darkMode ? '#fafafa' : '#3e3e42', borderRadius: 10 }}>
-                        {/* <Image style={{ width: 25, height: 25, }} source={Sun} /> */}
+                    <View style={{
+                        ...styles.circleSubCon,
+                        backgroundColor: darkMode ? '#fafafa' : '#3e3e42',
+                    }}>
                     </View>
+
 
                 </View>
 
                 <View style={{
-                    ...styles.ComfortLevelFeelCon,
+                    ...styles.comfortLevelFeelCon,
                 }}>
                     <View>
                         <Text style={{
-                            ...styles.ComfortLevelFeelText,
                             color: darkMode ? '#2f2f2f' : '#FFFFFF',
                         }}>
                             Feels Like 10%
@@ -66,7 +66,6 @@ export default function ComfortLevel({ darkMode }) {
 
                     <View>
                         <Text style={{
-                            ...styles.ComfortLevelFeelText,
                             color: darkMode ? '#2f2f2f' : '#FFFFFF',
                         }}>
                             UV Index 00
@@ -76,13 +75,14 @@ export default function ComfortLevel({ darkMode }) {
 
             </View >
 
+
         </View >
     )
 }
 
 const styles = StyleSheet.create({
 
-    sunsetAndRiseCon: {
+    comfortLevelCon: {
         height: 200,
         borderColor: '#eee',
         borderRadius: 10,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 40,
         marginTop: 20
     },
-    sunsetAndRiseText: {
+    comfortLevelText: {
         padding: 15,
         fontSize: 15,
         fontWeight: '500'
@@ -113,23 +113,19 @@ const styles = StyleSheet.create({
         fontSize: '14'
     },
 
-    sunImgCon: {
+    circleSubCon: {
         position: 'absolute',
         bottom: -10,
-        width: 70,
+        width: 50,
         height: 25,
         paddingHorizontal: 3,
     },
 
-    ComfortLevelFeelCon: {
+    comfortLevelFeelCon: {
         flexDirection: 'row',
         marginTop: 2,
         width: '100%',
         justifyContent: 'space-around'
     },
-
-    ComfortLevelFeelText: {
-        fontWeight: '400'
-    }
 
 })

@@ -8,6 +8,7 @@ import SearchBar from '../components/SearchBar'
 import SunRiseAndSet from '../components/SunRiseAndSet'
 import ComfortLevel from '../components/ComfortLevel'
 import { ScrollView } from 'react-native'
+import Wind from '../components/Wind'
 // import Geolocation from 'react-native-geolocation-service';
 
 
@@ -21,7 +22,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
     console.log('Weather Temp:', weatheInfo?.main?.temp)
     // console.log('Weather Temp:', weatheInfo?.weather[0]?.main)
     console.log('Weather Hum:', weatheInfo?.main?.humidity)
-    console.log('Wind Speed:', weatheInfo?.wind?.speed)
+    console.log('Wind Speed:', weatheInfo?.wind?.deg)
 
 
     // Geolocation.getCurrentPosition(
@@ -104,8 +105,9 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
             <CityInfo weatheInfo={weatheInfo} darkMode={darkMode}></CityInfo>
             <WeatherInfo weatheInfo={weatheInfo} darkMode={darkMode}></WeatherInfo>
             <WindInfo weatheInfo={weatheInfo} darkMode={darkMode}></WindInfo>
-            <SunRiseAndSet darkMode={darkMode}></SunRiseAndSet>
-            <ComfortLevel darkMode={darkMode}></ComfortLevel>
+            <SunRiseAndSet weatheInfo={weatheInfo} darkMode={darkMode}></SunRiseAndSet>
+            <ComfortLevel weatheInfo={weatheInfo} darkMode={darkMode}></ComfortLevel>
+            <Wind weatheInfo={weatheInfo} darkMode={darkMode}></Wind>
 
         </Animated.View>
 

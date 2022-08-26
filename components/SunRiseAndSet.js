@@ -4,7 +4,8 @@ import Sun from '../assets/icons/Sun.png'
 import { Image } from 'react-native'
 
 
-export default function SunRiseAndSet({ darkMode }) {
+export default function SunRiseAndSet({ darkMode, weatheInfo }) {
+
     return (
         <View style={{
             ...styles.sunsetAndRiseCon,
