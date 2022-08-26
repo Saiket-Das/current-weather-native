@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useRef, useState } from 'react';
-import { Animated, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Home from './screens/Home';
 import DarkMode from './assets/icons/mode.png'
 
@@ -43,6 +43,7 @@ export default function App() {
 
 
       {/* ------- Home Page ------- */}
+
       <Animated.View style={{
         ...styles.animatedScreen,
         backgroundColor: darkMode ? '#FFFFFF' : '#2f2f2f',
@@ -52,15 +53,19 @@ export default function App() {
           { translateX: offsetValue },
         ]
       }}>
-        <Home
-          scaleValue={scaleValue}
-          offsetValue={offsetValue}
-          closeButtonOffset={closeButtonOffset}
-          showMenu={showMenu}
-          setShowMenu={setShowMenu}
-          darkMode={darkMode}
-        >
-        </Home>
+        <ScrollView showsVerticalScrollIndicator={false} >
+
+          <Home
+            scaleValue={scaleValue}
+            offsetValue={offsetValue}
+            closeButtonOffset={closeButtonOffset}
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+            darkMode={darkMode}
+          >
+          </Home>
+        </ScrollView>
+
       </Animated.View>
 
 

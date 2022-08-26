@@ -7,6 +7,7 @@ import WindInfo from '../components/WindInfo'
 import SearchBar from '../components/SearchBar'
 import SunRiseAndSet from '../components/SunRiseAndSet'
 import ComfortLevel from '../components/ComfortLevel'
+import { ScrollView } from 'react-native'
 // import Geolocation from 'react-native-geolocation-service';
 
 
@@ -18,6 +19,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
     console.log('---------------<>-----------------', weatheInfo)
     console.log('City Name:', weatheInfo.name)
     console.log('Weather Temp:', weatheInfo?.main?.temp)
+    // console.log('Weather Temp:', weatheInfo?.weather[0]?.main)
     console.log('Weather Hum:', weatheInfo?.main?.humidity)
     console.log('Wind Speed:', weatheInfo?.wind?.speed)
 
@@ -47,6 +49,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
     }, [cityName])
 
     return (
+
         <Animated.View
             style={{
                 transform: [
@@ -54,7 +57,7 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
                 ],
             }}
         >
-            <View style={styles.headerContainer}>
+            <View style={styles.headerContainer} >
                 <TouchableOpacity
                     onPress={() => {
                         // Do Actions Here....
@@ -95,7 +98,6 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
 
                 <Text style={{ ...styles.weatheType, color: darkMode ? '#2f2f2f' : '#FFFFFF', }}></Text>
 
-
             </View>
 
             <SearchBar setCityName={setCityName} darkMode={darkMode}></SearchBar>
@@ -106,6 +108,8 @@ export default function Home({ scaleValue, offsetValue, closeButtonOffset, showM
             <ComfortLevel darkMode={darkMode}></ComfortLevel>
 
         </Animated.View>
+
+
     )
 }
 

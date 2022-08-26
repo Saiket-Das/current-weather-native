@@ -16,13 +16,7 @@ export default function SunRiseAndSet({ darkMode }) {
                 Sunrise and Sunset
             </Text>
 
-            <View style={{
-                alignItems: 'center',
-                // borderColor: '#FFFFFF',
-                // borderWidth: 1,
-            }}>
-
-
+            <View style={{ alignItems: 'center' }}>
 
                 {/* ---------- Circle Dashed ---------- */}
                 <View style={{ ...styles.dashedCircel, borderColor: darkMode ? '#2f2f2f' : '#FFFFFF', alignItems: 'center' }}>
@@ -30,17 +24,18 @@ export default function SunRiseAndSet({ darkMode }) {
                     {/* ---------- Sunrise ---------- */}
                     <Text style={{
                         ...styles.sunriseAndSunsetText, color: darkMode ? '#2f2f2f' : '#FFFFFF', marginTop: 110 / 4.5,
-                    }}>Sunrise</Text>
+                    }}>
+                        Sunrise
+                    </Text>
 
                     {/* ---------- Sunset ---------- */}
                     <Text style={{
                         ...styles.sunriseAndSunsetText, color: darkMode ? '#2f2f2f' : '#FFFFFF', marginTop: 110 / 1.65,
-                    }}>Sunset</Text>
+                    }}>
+                        Sunset
+                    </Text>
 
                 </View>
-
-
-
 
 
                 {/* ---------- Horizental Line ---------- */}
@@ -87,6 +82,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 45,
         borderBottomLeftRadius: 40,
     },
+
     sunsetAndRiseText: {
         padding: 15,
         fontSize: 15,
@@ -100,6 +96,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderStyle: 'dashed',
     },
+
     sunriseAndSunsetText: {
         fontSize: 13,
         textAlign: 'center',
