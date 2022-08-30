@@ -53,18 +53,18 @@ export default function App() {
           { translateX: offsetValue },
         ]
       }}>
-        <ScrollView showsVerticalScrollIndicator={false} >
 
+        <View>
           <Home
             scaleValue={scaleValue}
             offsetValue={offsetValue}
             closeButtonOffset={closeButtonOffset}
             showMenu={showMenu}
             setShowMenu={setShowMenu}
-            darkMode={darkMode}
-          >
+            darkMode={darkMode}>
           </Home>
-        </ScrollView>
+        </View>
+
 
       </Animated.View>
 

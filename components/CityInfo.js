@@ -5,12 +5,16 @@ import React from 'react'
 
 export default function CityInfo({ weatheInfo, darkMode }) {
 
-    var today = new Date();
-    const date = today.getDate()
-    const month = today.getMonth()
+    let todayUnix = weatheInfo?.sys?.sunrise
+    let todayDate = new Date(todayUnix * 1000);
+    console.log('-------- Date --------', todayDate);
+
+    const date = todayDate.getDate()
+    const month = todayDate.getMonth()
     const condtionalMonth = month >= 10 ? (month + 1) : '0' + (month + 1)
-    const year = today.getFullYear();
+    const year = todayDate.getFullYear();
     const currentDate = date + '-' + (condtionalMonth) + '-' + year
+    console.log("Today's Date", currentDate);
 
     return (
         <View style={styles.CityDetails}>

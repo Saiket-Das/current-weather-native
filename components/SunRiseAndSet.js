@@ -2,9 +2,73 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import Sun from '../assets/icons/Sun.png'
 import { Image } from 'react-native'
+// import useTimeCalculation from '../calculation/TimeCalculation'
 
 
 export default function SunRiseAndSet({ darkMode, weatheInfo }) {
+
+
+    // const [time] = useTimeCalculation(formattedTime)
+    // console.log('TIMEEEEE:', time)
+
+
+    let todaySunriseUnix = weatheInfo?.sys.sunrise
+    let todayDate = new Date(todaySunriseUnix * 1000);
+    console.log('--------Sunrise Date --------', todayDate);
+    var sunriseHours = "0" + todayDate.getHours();
+    var sunriseMinutes = "0" + todayDate.getMinutes();
+    var formattedTime = sunriseHours + ':' + sunriseMinutes.substr(-2)
+    console.log('Sunrise Time', formattedTime);
+
+
+
+
+    let todaySunsetUnix = weatheInfo?.sys.sunset
+    let todayDatee = new Date(todaySunsetUnix * 1000);
+    console.log('--------Sunset Dateee --------', todayDatee);
+
+    var sunsetHours = todayDatee.getHours();
+    var sunsetMinutes = "0" + todayDatee.getMinutes();
+    var formattedTimee = sunsetHours + ':' + sunsetMinutes.substr(-2)
+    console.log('Sunset Time', formattedTimee);
+
+    function tConvert(time) {
+        // Check correct time format and split into components
+        time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+        if (time.length > 1) { // If time format correct
+            time = time.slice(1);  // Remove full string match value
+            time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
+            time[0] = +time[0] % 12 || 12; // Adjust hours
+        }
+        return time.join(''); // return adjusted time or original string
+    }
+
+    const sunrise = tConvert(formattedTime);
+    const sunset = tConvert(formattedTimee);
+
+    console.log('12 Hour Sunrise Time', sunrise)
+    console.log('12 Hour Sunset Time', sunset)
+
+
+
+
+
+
+    function tConvert(time) {
+        // Check correct time format and split into components
+        time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+        console.log('time', time)
+
+        if (time.length > 1) { // If time format correct
+            time = time.slice(1);  // Remove full string match value
+            time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+            time[0] = +time[0] % 12 || 12; // Adjust hours
+        }
+        return time.join(''); // return adjusted time or original string
+    }
+
+    const twelveHourtime = tConvert(formattedTimee);
+    console.log('12 Hour Sunset Time', twelveHourtime)
 
     return (
         <View style={{
@@ -49,7 +113,7 @@ export default function SunRiseAndSet({ darkMode, weatheInfo }) {
                         color: darkMode ? '#2f2f2f' : '#FFFFFF',
                         right: -10
                     }}>
-                        6:05 PM
+                        {sunset}
                     </Text>
 
                     <Text style={{
@@ -58,7 +122,7 @@ export default function SunRiseAndSet({ darkMode, weatheInfo }) {
                         color: darkMode ? '#2f2f2f' : '#FFFFFF',
                         left: -10
                     }}>
-                        5:59 AM
+                        {sunrise}
                     </Text>
 
                 </View>
