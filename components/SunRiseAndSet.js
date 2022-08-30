@@ -11,64 +11,74 @@ export default function SunRiseAndSet({ darkMode, weatheInfo }) {
     // const [time] = useTimeCalculation(formattedTime)
     // console.log('TIMEEEEE:', time)
 
-
-    let todaySunriseUnix = weatheInfo?.sys.sunrise
-    let todayDate = new Date(todaySunriseUnix * 1000);
-    console.log('--------Sunrise Date --------', todayDate);
-    var sunriseHours = "0" + todayDate.getHours();
-    var sunriseMinutes = "0" + todayDate.getMinutes();
-    var formattedTime = sunriseHours + ':' + sunriseMinutes.substr(-2)
-    console.log('Sunrise Time', formattedTime);
+    // console.log('Sunrise Unix', weatheInfo?.sys?.sunrise)
+    // let todaySunriseUnix = weatheInfo?.sys.sunrise
 
 
+    // let todayDate = new Date(todaySunriseUnix * 1000);
+    // console.log('--------Sunrise Date --------', todayDate);
+    // var sunriseHours = "0" + todayDate.getHours();
+    // var sunriseMinutes = "0" + todayDate.getMinutes();
+    // var formattedTime = sunriseHours + ':' + sunriseMinutes.substr(-2)
+    // console.log('Sunrise Time', formattedTime);
 
 
-    let todaySunsetUnix = weatheInfo?.sys.sunset
-    let todayDatee = new Date(todaySunsetUnix * 1000);
-    console.log('--------Sunset Dateee --------', todayDatee);
 
-    var sunsetHours = todayDatee.getHours();
-    var sunsetMinutes = "0" + todayDatee.getMinutes();
-    var formattedTimee = sunsetHours + ':' + sunsetMinutes.substr(-2)
-    console.log('Sunset Time', formattedTimee);
 
-    function tConvert(time) {
+    // let todaySunsetUnix = weatheInfo?.sys.sunset
+    // let todayDatee = new Date(todaySunsetUnix * 1000);
+    // console.log('--------Sunset Dateee --------', todayDatee);
+
+
+
+    function tConvert(todayUnix) {
+        let date = new Date(todayUnix * 1000);
+        var hours = date.getHours();
+        var minutes = "0" + date.getMinutes();
+        var time = hours + ':' + minutes.substr(-2)
+
         // Check correct time format and split into components
         time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-        if (time.length > 1) { // If time format correct
-            time = time.slice(1);  // Remove full string match value
-            time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
-            time[0] = +time[0] % 12 || 12; // Adjust hours
-        }
-        return time.join(''); // return adjusted time or original string
-    }
 
-    const sunrise = tConvert(formattedTime);
-    const sunset = tConvert(formattedTimee);
-
-    console.log('12 Hour Sunrise Time', sunrise)
-    console.log('12 Hour Sunset Time', sunset)
-
-
-
-
-
-
-    function tConvert(time) {
-        // Check correct time format and split into components
-        time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-        console.log('time', time)
-
-        if (time.length > 1) { // If time format correct
-            time = time.slice(1);  // Remove full string match value
+        if (time.length > 1) {
+            time = time.slice(1);
             time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
             time[0] = +time[0] % 12 || 12; // Adjust hours
         }
+
+        else {
+            time[0] = time[0] + ' AM'
+        }
+
         return time.join(''); // return adjusted time or original string
     }
 
-    const twelveHourtime = tConvert(formattedTimee);
-    console.log('12 Hour Sunset Time', twelveHourtime)
+    const sunrise = tConvert(weatheInfo?.sys?.sunrise);
+    const sunset = tConvert(weatheInfo?.sys?.sunset);
+
+    // console.log('12 Hour Sunrise Time', sunrise)
+    // console.log('12 Hour Sunset Time', sunset)
+
+
+
+
+
+
+    // function tConvert(time) {
+    //     // Check correct time format and split into components
+    //     time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    //     console.log('time', time)
+
+    //     if (time.length > 1) { // If time format correct
+    //         time = time.slice(1);  // Remove full string match value
+    //         time[5] = +time[0] < 12 ? ' AM' : ' PM'; // Set AM/PM
+    //         time[0] = +time[0] % 12 || 12; // Adjust hours
+    //     }
+    //     return time.join(''); // return adjusted time or original string
+    // }
+
+    // const twelveHourtime = tConvert(formattedTimee);
+    // console.log('12 Hour Sunset Time', twelveHourtime)
 
     return (
         <View style={{
