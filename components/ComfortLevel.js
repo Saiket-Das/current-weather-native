@@ -34,6 +34,8 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
                     justifyContent: 'center'
                 }}>
 
+
+                    {/* ---------- Text Inside the Circle ---------- */}
                     <View>
                         <Text style={{
                             ...styles.humidityPercentage,
@@ -50,15 +52,14 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
                         </Text>
                     </View>
 
-
+                    {/* ---------- Circle Gap ---------- */}
                     <View style={{
                         ...styles.circleSubCon,
                         backgroundColor: darkMode ? '#fafafa' : '#3e3e42',
                     }}>
                     </View>
-
-
                 </View>
+
 
                 <View style={{
                     ...styles.comfortLevelFeelCon,
@@ -123,8 +124,9 @@ const styles = StyleSheet.create({
     circleSubCon: {
         position: 'absolute',
         bottom: -10,
-        width: 50,
+        width: 60,
         height: 25,
+        borderRadius: -0,
         paddingHorizontal: 3,
     },
 
