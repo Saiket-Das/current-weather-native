@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -6,7 +7,7 @@ import {
   Animated,
   StyleSheet,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+
 import CityInfo from "../components/CityInfo";
 import WeatherInfo from "../components/WeatherInfo";
 import Menu from "../assets/icons/menu.png";
