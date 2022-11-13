@@ -58,8 +58,10 @@ export default function Home({
   const sunset = timeConvert(weatheInfo?.sys?.sunset);
   const currentTime = timeConvert(weatheInfo?.dt);
 
-  const getWeatheInfo = () => {
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.GET_WAETHER_API_KEY}`;
+  const getWeatheInfo = async () => {
+    const weatherURL =
+      await `https://api.openweathermap.org/data/2.5/weather?lat=${location?.latitude}&lon=${location?.longitude}&appid=${process.env.GET_WAETHER_API_KEY}`;
+    // const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.GET_WAETHER_API_KEY}`;
 
     return fetch(weatherURL)
       .then((res) => res.json())
