@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   View,
-  Text,
   Image,
   TouchableOpacity,
   Animated,
@@ -15,9 +14,9 @@ import WindInfo from "../components/WindInfo";
 import SearchBar from "../components/SearchBar";
 import SunRiseAndSet from "../components/SunRiseAndSet";
 import ComfortLevel from "../components/ComfortLevel";
-import { ScrollView } from "react-native";
 import Wind from "../components/Wind";
 import useLocation from "../hooks/useLocation";
+import Text from "../components/common/AppText";
 
 export default function Home({
   scaleValue,
@@ -74,7 +73,6 @@ export default function Home({
   }, [cityName]);
 
   return (
-    // <ScrollView>
     <View>
       <Animated.View
         style={{
@@ -128,13 +126,14 @@ export default function Home({
           </Text>
         </View>
 
-        <SearchBar setCityName={setCityName} darkMode={darkMode}></SearchBar>
+        {/* <SearchBar setCityName={setCityName} darkMode={darkMode}></SearchBar> */}
         <CityInfo
           weatheInfo={weatheInfo}
           darkMode={darkMode}
           currentTime={currentTime}
-        ></CityInfo>
-        <WeatherInfo weatheInfo={weatheInfo} darkMode={darkMode}></WeatherInfo>
+        />
+
+        <WeatherInfo weatheInfo={weatheInfo} darkMode={darkMode} />
         <WindInfo weatheInfo={weatheInfo} darkMode={darkMode}></WindInfo>
         <SunRiseAndSet
           weatheInfo={weatheInfo}
