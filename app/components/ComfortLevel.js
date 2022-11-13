@@ -15,7 +15,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
     <View
       style={{
         ...styles.comfortLevelCon,
-        backgroundColor: darkMode ? "#fafafa" : "#3e3e42",
+        backgroundColor: darkMode ? colors.lightWhite : colors.lightDark,
       }}
     >
       <Text
@@ -23,7 +23,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
           padding: 15,
           fontSize: 15,
           fontWeight: "500",
-          color: darkMode ? "#2f2f2f" : colors.white,
+          color: darkMode ? colors.dark : colors.white,
         }}
       >
         Comfort Level
@@ -46,7 +46,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
             <Text
               style={{
                 ...styles.humidityPercentage,
-                color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                color: darkMode ? colors.dark : colors.white,
                 textAlign: "center",
               }}
             >
@@ -55,7 +55,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
             <Text
               style={{
                 ...styles.humidityText,
-                color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                color: darkMode ? colors.dark : colors.white,
               }}
             >
               Humidity
@@ -66,7 +66,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
           <View
             style={{
               ...styles.circleSubCon,
-              backgroundColor: darkMode ? "#fafafa" : "#3e3e42",
+              backgroundColor: darkMode ? colors.lightWhite : colors.lightDark,
             }}
           ></View>
         </View>
@@ -79,7 +79,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
           <View>
             <Text
               style={{
-                color: darkMode ? "#2f2f2f" : colors.white,
+                color: darkMode ? colors.dark : colors.white,
               }}
             >
               Feels Like {feelLikeTempC}°
@@ -89,7 +89,7 @@ export default function ComfortLevel({ darkMode, weatheInfo }) {
           <View>
             <Text
               style={{
-                color: darkMode ? "#2f2f2f" : colors.white,
+                color: darkMode ? colors.dark : colors.white,
               }}
             >
               Visibility {visibilityKM}KM
