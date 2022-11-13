@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import Home from "./app/screens/Home";
 import DarkMode from "./app/assets/icons/dark-mode.png";
+import colors from "./app/config/colors";
 
 export default function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,7 +27,7 @@ export default function App() {
     <SafeAreaView
       style={{
         ...styles.menuContainer,
-        backgroundColor: darkMode ? "#FFFFFF" : "#2f2f2f",
+        backgroundColor: darkMode ? colors.white : colors.dark,
       }}
     >
       <StatusBar style={darkMode ? "dark" : "light"} />
@@ -99,8 +100,8 @@ export default function App() {
       <Animated.View
         style={{
           ...styles.animatedScreen,
-          backgroundColor: darkMode ? "#FFFFFF" : "#2f2f2f",
-          shadowColor: darkMode ? "#2f2f2f" : "#5f5f5f",
+          backgroundColor: darkMode ? colors.white : colors.dark,
+          shadowColor: darkMode ? colors.lightGray : colors.darkGray,
           transform: [{ scale: scaleValue }, { translateX: offsetValue }],
         }}
       >
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingTop: 20,
     borderRadius: 15,
     shadowOffset: { width: -10, height: 0 },
     shadowOpacity: 0.2,

@@ -28,9 +28,6 @@ export default function Home({
 }) {
   const location = useLocation();
 
-  console.log(location);
-
-  const [cityName, setCityName] = useState("New York");
   const [weatheInfo, setWeatherInfo] = useState([]);
 
   function timeConvert(todayUnix) {
@@ -70,7 +67,7 @@ export default function Home({
 
   useEffect(() => {
     getWeatheInfo();
-  }, [cityName]);
+  }, []);
 
   return (
     <View>
@@ -134,17 +131,14 @@ export default function Home({
         />
 
         <WeatherInfo weatheInfo={weatheInfo} darkMode={darkMode} />
-        <WindInfo weatheInfo={weatheInfo} darkMode={darkMode}></WindInfo>
+        <WindInfo weatheInfo={weatheInfo} darkMode={darkMode} />
         <SunRiseAndSet
           weatheInfo={weatheInfo}
           darkMode={darkMode}
           sunrise={sunrise}
           sunset={sunset}
-        ></SunRiseAndSet>
-        <ComfortLevel
-          weatheInfo={weatheInfo}
-          darkMode={darkMode}
-        ></ComfortLevel>
+        />
+        <ComfortLevel weatheInfo={weatheInfo} darkMode={darkMode} />
         <Wind weatheInfo={weatheInfo} darkMode={darkMode}></Wind>
       </Animated.View>
     </View>

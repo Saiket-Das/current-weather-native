@@ -5,6 +5,7 @@ import Weather from "../assets/icons/cloudy.png";
 import { Divider } from "react-native-elements";
 import { StyleSheet } from "react-native";
 import Text from "./common/AppText";
+import colors from "../config/colors";
 
 export default function WeatherInfo({ weatheInfo, darkMode }) {
   const tempK = (weatheInfo?.main?.temp - 273).toFixed(2);
@@ -21,7 +22,7 @@ export default function WeatherInfo({ weatheInfo, darkMode }) {
           style={{
             fontSize: 45,
             fontWeight: "200",
-            color: darkMode ? "#2f2f2f" : "#FFFFFF",
+            color: darkMode ? colors.dark : colors.white,
           }}
         >
           {tempC}°
@@ -32,7 +33,7 @@ export default function WeatherInfo({ weatheInfo, darkMode }) {
             fontSize: 14,
             opacity: 0.8,
             textTransform: "capitalize",
-            color: darkMode ? "#2f2f2f" : "#FFFFFF",
+            color: darkMode ? colors.dark : colors.white,
           }}
         >
           {weatheInfo?.weather && weatheInfo?.weather[0]?.description}
