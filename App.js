@@ -1,106 +1,121 @@
-import { StatusBar } from 'expo-status-bar';
-import { useRef, useState } from 'react';
-import { Animated, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Home from './screens/Home';
-import DarkMode from './assets/icons/dark-mode.png';
-
-
+import { StatusBar } from "expo-status-bar";
+import { useRef, useState } from "react";
+import {
+  Animated,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import Home from "./app/screens/Home";
+import DarkMode from "./app/assets/icons/dark-mode.png";
 
 export default function App() {
-
   const [showMenu, setShowMenu] = useState(false);
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
 
   // Animated Properties...
   const offsetValue = useRef(new Animated.Value(0)).current;
   const scaleValue = useRef(new Animated.Value(1)).current;
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
 
-
-
-
   return (
-    <SafeAreaView style={{
-      ...styles.menuContainer, backgroundColor: darkMode ? '#FFFFFF' : '#2f2f2f',
-    }}>
-      <StatusBar style={darkMode ? "dark" : 'light'} />
-
+    <SafeAreaView
+      style={{
+        ...styles.menuContainer,
+        backgroundColor: darkMode ? "#FFFFFF" : "#2f2f2f",
+      }}
+    >
+      <StatusBar style={darkMode ? "dark" : "light"} />
 
       {/* ------- DRAWER OVERLAY ------- */}
-      <View style={{ flex: 1, justifyContent: 'center', marginHorizontal: 10 }}>
+      <View style={{ flex: 1, justifyContent: "center", marginHorizontal: 10 }}>
         <View style={{ margin: 10 }}>
-
-          <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}
+          <TouchableOpacity
+            style={{ flexDirection: "row", alignItems: "center" }}
             onPress={() => {
               // Do Actions Here....
               // Scaling the view...
               Animated.timing(scaleValue, {
                 toValue: showMenu ? 1 : 0.78,
                 duration: 300,
-                useNativeDriver: true
-              })
-                .start()
+                useNativeDriver: true,
+              }).start();
 
               Animated.timing(offsetValue, {
                 // Random Value...
                 toValue: showMenu ? 0 : 230,
                 duration: 300,
-                useNativeDriver: true
-              })
-                .start()
+                useNativeDriver: true,
+              }).start();
 
               Animated.timing(closeButtonOffset, {
                 // Random Value...
                 toValue: !showMenu ? -30 : 0,
                 duration: 300,
-                useNativeDriver: true
-              })
-                .start()
+                useNativeDriver: true,
+              }).start();
 
               setShowMenu(true);
-              setDarkMode(!darkMode)
+              setDarkMode(!darkMode);
               // setShowMenu(!showMenu)
-            }}>
-            <Image source={DarkMode} style={{ ...styles.modeImg, tintColor: darkMode ? '#2f2f2f' : '#FFFFFF' }} />
+            }}
+          >
+            <Image
+              source={DarkMode}
+              style={{
+                ...styles.modeImg,
+                tintColor: darkMode ? "#2f2f2f" : "#FFFFFF",
+              }}
+            />
 
-            {darkMode ?
-              <Text style={{ ...styles.modeText, color: darkMode ? '#2f2f2f' : '#FFFFFF' }}>Dark</Text>
-
-              :
-              <Text style={{ ...styles.modeText, color: darkMode ? '#2f2f2f' : '#FFFFFF' }}>Light</Text>
-
-            }
+            {darkMode ? (
+              <Text
+                style={{
+                  ...styles.modeText,
+                  color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                }}
+              >
+                Dark
+              </Text>
+            ) : (
+              <Text
+                style={{
+                  ...styles.modeText,
+                  color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                }}
+              >
+                Light
+              </Text>
+            )}
           </TouchableOpacity>
-
         </View>
       </View>
 
-
       {/* ------- HOME SCREEN ------- */}
-      <Animated.View style={{
-        ...styles.animatedScreen,
-        backgroundColor: darkMode ? '#FFFFFF' : '#2f2f2f',
-        shadowColor: darkMode ? '#2f2f2f' : '#5f5f5f',
-        transform: [
-          { scale: scaleValue },
-          { translateX: offsetValue },
-        ]
-      }}>
-
-        <ScrollView showsVerticalScrollIndicator={false} >
+      <Animated.View
+        style={{
+          ...styles.animatedScreen,
+          backgroundColor: darkMode ? "#FFFFFF" : "#2f2f2f",
+          shadowColor: darkMode ? "#2f2f2f" : "#5f5f5f",
+          transform: [{ scale: scaleValue }, { translateX: offsetValue }],
+        }}
+      >
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Home
             scaleValue={scaleValue}
             offsetValue={offsetValue}
             closeButtonOffset={closeButtonOffset}
             showMenu={showMenu}
             setShowMenu={setShowMenu}
-            darkMode={darkMode}>
-          </Home>
+            darkMode={darkMode}
+          ></Home>
         </ScrollView>
       </Animated.View>
-
-
-    </SafeAreaView >
+    </SafeAreaView>
   );
 }
 
@@ -111,7 +126,7 @@ const styles = StyleSheet.create({
 
   animatedScreen: {
     flexGrow: 1,
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     bottom: 0,
     left: 0,
@@ -132,6 +147,6 @@ const styles = StyleSheet.create({
   modeText: {
     marginLeft: 10,
     fontSize: 16,
-    fontWeight: '500'
-  }
+    fontWeight: "500",
+  },
 });
