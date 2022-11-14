@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
 
   animatedScreen: {
-    flexGrow: 1,
+    flex: 1,
     position: "absolute",
     top: 0,
     bottom: 0,

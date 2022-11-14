@@ -149,7 +149,6 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "row",
     alignItems: "center",
-    // marginTop: 40,
   },
 
   menuImg: {
@@ -163,5 +162,3 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
 });
-
-// console.log('My Location', myLocation)
