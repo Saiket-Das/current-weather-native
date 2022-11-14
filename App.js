@@ -13,6 +13,7 @@ import {
 import Home from "./app/screens/Home";
 import DarkMode from "./app/assets/icons/dark-mode.png";
 import colors from "./app/config/colors";
+import Screen from "./app/components/common/Screen";
 
 export default function App() {
   const [showMenu, setShowMenu] = useState(false);
@@ -24,17 +25,17 @@ export default function App() {
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
 
   return (
-    <SafeAreaView
+    <Screen
       style={{
-        ...styles.menuContainer,
+        // ...styles.menuContainer,
         backgroundColor: darkMode ? colors.white : colors.dark,
       }}
     >
       <StatusBar style={darkMode ? "dark" : "light"} />
 
       {/* ------- DRAWER OVERLAY ------- */}
-      <View style={{ flex: 1, justifyContent: "center", marginHorizontal: 10 }}>
-        <View style={{ margin: 10 }}>
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <View>
           <TouchableOpacity
             style={{ flexDirection: "row", alignItems: "center" }}
             onPress={() => {
@@ -116,7 +117,7 @@ export default function App() {
           ></Home>
         </ScrollView>
       </Animated.View>
-    </SafeAreaView>
+    </Screen>
   );
 }
 
@@ -133,9 +134,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingHorizontal: 15,
-    paddingTop: 20,
-    borderRadius: 15,
-    shadowOffset: { width: -10, height: 0 },
+    // paddingTop: 20,
+    // borderRadius: 15,
+    shadowOffset: { width: -10, height: 10 },
     shadowOpacity: 0.2,
     shadowRadius: 10,
   },

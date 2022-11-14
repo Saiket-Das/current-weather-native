@@ -45,7 +45,7 @@ const WindDetails = ({ image, textInfo, darkMode }) => (
       style={{
         fontWeight: "500",
         marginTop: 10,
-        color: darkMode ? "#2f2f2f" : "#eee",
+        color: darkMode ? colors.dark : "#eee",
       }}
     >
       {textInfo}

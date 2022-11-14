@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 40,
+    // marginTop: 40,
   },
 
   menuImg: {
