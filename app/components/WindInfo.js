@@ -1,10 +1,13 @@
-import { View, Image } from "react-native";
 import React from "react";
+import { View, Image } from "react-native";
+import { StyleSheet } from "react-native";
+
+import Text from "./common/AppText";
+
 import KMH from "../assets/icons/wind.png";
 import Cloud from "../assets/icons/cloud.png";
 import WaterDrop from "../assets/icons/water-drop.png";
-import { StyleSheet } from "react-native";
-import Text from "./common/AppText";
+import colors from "../config/colors";
 
 export default function WindInfo({ weatheInfo, darkMode }) {
   return (
@@ -33,7 +36,7 @@ const WindDetails = ({ image, textInfo, darkMode }) => (
     <View
       style={{
         ...styles.WindDetailsImgCon,
-        backgroundColor: darkMode ? "#f3f3f3" : "#3e3e42",
+        backgroundColor: darkMode ? "#f3f3f3" : colors.lightDark,
       }}
     >
       <Image style={styles.kmhImg} source={image} />
@@ -54,11 +57,11 @@ const styles = StyleSheet.create({
   WindInfoCon: {
     flexDirection: "row",
     justifyContent: "space-around",
-    // paddingVertical: 25,
+    paddingVertical: 25,
   },
 
   WindDetailsImgCon: {
-    // padding: 15,
+    padding: 15,
     borderRadius: 10,
   },
 
