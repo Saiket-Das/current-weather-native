@@ -164,31 +164,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// console.log('---------------<>-----------------', weatheInfo)
-// console.log('City Name:', weatheInfo.name)
-// console.log('Weather Temp:', weatheInfo?.main?.temp)
-// console.log('Weather Temp:', weatheInfo?.weather)
-// console.log('Weather Hum:', weatheInfo?.main?.humidity)
-// console.log('Sunrise:', weatheInfo?.sys?.sunset)
-
-// useEffect(() => {
-//     (async () => {
-//         let { status } = await Location.requestForegroundPermissionsAsync();
-//         if (status !== 'granted') {
-//             setErrorMsg('Permission to access location was denied');
-//             return;
-//         }
-
-//         let location = await Location.getCurrentPositionAsync({});
-//         setLocation(location);
-//     })();
-// }, []);
-
-// let myLocation = 'Waiting..';
-// if (errorMsg) {
-//     myLocation = errorMsg;
-// } else if (location) {
-//     myLocation = JSON.stringify(location);
-// }
-
 // console.log('My Location', myLocation)

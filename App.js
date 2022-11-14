@@ -70,7 +70,7 @@ export default function App() {
               source={DarkMode}
               style={{
                 ...styles.modeImg,
-                tintColor: darkMode ? "#2f2f2f" : "#FFFFFF",
+                tintColor: darkMode ? "#2f2f2f" : colors.white,
               }}
             />
 
@@ -78,7 +78,7 @@ export default function App() {
               <Text
                 style={{
                   ...styles.modeText,
-                  color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                  color: darkMode ? "#2f2f2f" : colors.white,
                 }}
               >
                 Dark
@@ -87,7 +87,7 @@ export default function App() {
               <Text
                 style={{
                   ...styles.modeText,
-                  color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                  color: darkMode ? colors.dark : colors.white,
                 }}
               >
                 Light
@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
     right: 0,
     paddingHorizontal: 15,
     // paddingTop: 20,
-    // borderRadius: 15,
-    shadowOffset: { width: -10, height: 10 },
+    borderRadius: 10,
+    shadowOffset: { width: -10, height: 15 },
     shadowOpacity: 0.2,
     shadowRadius: 10,
   },
