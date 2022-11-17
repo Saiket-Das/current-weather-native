@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 import { Image } from "react-native";
 import Sun from "../assets/icons/wind-power.png";
 import Text from "./common/AppText";
+import colors from "../config/colors";
 
 export default function Wind({ darkMode, weatheInfo }) {
   let windDirection;
@@ -21,7 +22,7 @@ export default function Wind({ darkMode, weatheInfo }) {
     <View
       style={{
         ...styles.windCon,
-        backgroundColor: darkMode ? "#fafafa" : "#3e3e42",
+        backgroundColor: darkMode ? colors.lightWhite : colors.lightDark,
       }}
     >
       <Text
@@ -29,7 +30,7 @@ export default function Wind({ darkMode, weatheInfo }) {
           padding: 15,
           fontSize: 15,
           fontWeight: "500",
-          color: darkMode ? "#2f2f2f" : "#FFFFFF",
+          color: darkMode ? colors.lightGray : colors.white,
         }}
       >
         Wind
@@ -56,7 +57,7 @@ export default function Wind({ darkMode, weatheInfo }) {
           <View>
             <Text
               style={{
-                color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                color: darkMode ? colors.lightGray : colors.white,
               }}
             >
               Direction: {windDirection}
@@ -66,7 +67,7 @@ export default function Wind({ darkMode, weatheInfo }) {
           <View>
             <Text
               style={{
-                color: darkMode ? "#2f2f2f" : "#FFFFFF",
+                color: darkMode ? colors.lightGray : colors.white,
               }}
             >
               Speed: {Math.round(weatheInfo.wind?.speed * 1.60934) + "KM/hr"}
