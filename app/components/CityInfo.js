@@ -1,6 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
 import Text from "./common/AppText";
+import colors from "../config/colors";
 
 export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
   let todayUnix = weatheInfo?.sys?.sunrise;
@@ -17,7 +18,7 @@ export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
       <Text
         style={{
           fontSize: 14,
-          color: darkMode ? "#2f2f2f" : "#FFFFFF",
+          color: darkMode ? colors.lightGray : colors.white,
         }}
       >
         Today
@@ -28,7 +29,7 @@ export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
           fontSize: 26,
           fontWeight: "700",
           marginTop: 3,
-          color: darkMode ? "#2f2f2f" : "#FFFFFF",
+          color: darkMode ? colors.lightGray : colors.white,
         }}
       >
         {weatheInfo?.name}
@@ -39,7 +40,7 @@ export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
           fontSize: 14,
           marginTop: 5,
           opacity: 0.8,
-          color: darkMode ? "#2f2f2f" : "#FFFFFF",
+          color: darkMode ? colors.lightGray : colors.white,
         }}
       >
         {currentDate}
