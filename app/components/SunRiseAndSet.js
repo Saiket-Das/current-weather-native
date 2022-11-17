@@ -3,19 +3,20 @@ import React from "react";
 import Sun from "../assets/icons/Sun.png";
 import { Image } from "react-native";
 import Text from "./common/AppText";
+import colors from "../config/colors";
 
 export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
   return (
     <View
       style={{
         ...styles.sunsetAndRiseCon,
-        backgroundColor: darkMode ? "#fafafa" : "#3e3e42",
+        backgroundColor: darkMode ? colors.lightWhite : colors.lightDark,
       }}
     >
       <Text
         style={{
           ...styles.sunsetAndRiseText,
-          color: darkMode ? "#2f2f2f" : "#FFFFFF",
+          color: darkMode ? colors.dark : colors.white,
         }}
       >
         Sunrise and Sunset
@@ -26,7 +27,7 @@ export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
         <View
           style={{
             ...styles.dashedCircel,
-            borderColor: darkMode ? "#2f2f2f" : "#FFFFFF",
+            borderColor: darkMode ? colors.dark : colors.white,
             alignItems: "center",
           }}
         >
@@ -34,7 +35,7 @@ export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
           <Text
             style={{
               ...styles.sunriseAndSunsetText,
-              color: darkMode ? "#2f2f2f" : "#FFFFFF",
+              color: darkMode ? colors.dark : colors.white,
               marginTop: 110 / 4.5,
             }}
           >
@@ -45,7 +46,7 @@ export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
           <Text
             style={{
               ...styles.sunriseAndSunsetText,
-              color: darkMode ? "#2f2f2f" : "#FFFFFF",
+              color: darkMode ? colors.dark : colors.white,
               marginTop: 110 / 1.65,
             }}
           >
@@ -57,15 +58,15 @@ export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
         <View
           style={{
             ...styles.horizontalLine,
-            borderColor: darkMode ? "#2f2f2f" : "#FFFFFF",
+            borderColor: darkMode ? colors.dark : colors.white,
           }}
         >
           {/* ---------- Sunrise & Sunset ---------- */}
           <Text
             style={{
               ...styles.sunsetAndRiseTime,
-              backgroundColor: darkMode ? "#fafafa" : "#3e3e42",
-              color: darkMode ? "#2f2f2f" : "#FFFFFF",
+              backgroundColor: darkMode ? colors.lightWhite : colors.lightDark,
+              color: darkMode ? colors.dark : colors.white,
               right: -10,
             }}
           >
@@ -75,8 +76,8 @@ export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
           <Text
             style={{
               ...styles.sunsetAndRiseTime,
-              backgroundColor: darkMode ? "#fafafa" : "#3e3e42",
-              color: darkMode ? "#2f2f2f" : "#FFFFFF",
+              backgroundColor: darkMode ? colors.lightWhite : colors.lightDark,
+              color: darkMode ? colors.dark : colors.white,
               left: -10,
             }}
           >
@@ -87,7 +88,7 @@ export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
         <View
           style={{
             ...styles.sunImgCon,
-            backgroundColor: darkMode ? "#fafafa" : "#3e3e42",
+            backgroundColor: darkMode ? colors.lightWhite : colors.lightDark,
           }}
         >
           <Image style={{ width: 25, height: 25 }} source={Sun} />
