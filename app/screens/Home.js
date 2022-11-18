@@ -17,6 +17,7 @@ import ComfortLevel from "../components/ComfortLevel";
 import Wind from "../components/Wind";
 import useLocation from "../hooks/useLocation";
 import Text from "../components/common/AppText";
+import colors from "../config/colors";
 
 export default function Home({
   scaleValue,
@@ -108,7 +109,7 @@ export default function Home({
               source={Menu}
               style={{
                 ...styles.menuImg,
-                tintColor: darkMode ? "#2f2f2f" : "#FFFFFF",
+                tintColor: darkMode ? colors.dark : colors.white,
               }}
             />
           </TouchableOpacity>
