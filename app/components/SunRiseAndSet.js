@@ -15,7 +15,9 @@ export default function SunRiseAndSet({ darkMode, sunrise, sunset }) {
     >
       <Text
         style={{
-          ...styles.sunsetAndRiseText,
+          padding: 15,
+          fontSize: 15,
+          fontWeight: "500",
           color: darkMode ? colors.dark : colors.white,
         }}
       >
@@ -105,12 +107,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderTopRightRadius: 45,
     borderBottomLeftRadius: 40,
-  },
-
-  sunsetAndRiseText: {
-    padding: 15,
-    fontSize: 15,
-    fontWeight: "500",
   },
 
   dashedCircel: {
