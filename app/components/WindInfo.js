@@ -36,7 +36,7 @@ const WindDetails = ({ image, textInfo, darkMode }) => (
     <View
       style={{
         ...styles.WindDetailsImgCon,
-        backgroundColor: darkMode ? "#f3f3f3" : colors.lightDark,
+        backgroundColor: darkMode ? colors.lightGray : colors.lightDark,
       }}
     >
       <Image style={styles.kmhImg} source={image} />
@@ -45,7 +45,7 @@ const WindDetails = ({ image, textInfo, darkMode }) => (
       style={{
         fontWeight: "500",
         marginTop: 10,
-        color: darkMode ? colors.dark : "#eee",
+        color: darkMode ? colors.dark : colors.white,
       }}
     >
       {textInfo}
