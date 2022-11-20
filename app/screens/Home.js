@@ -117,7 +117,7 @@ export default function Home({
           <Text
             style={{
               ...styles.weatheType,
-              color: darkMode ? "#2f2f2f" : "#FFFFFF",
+              color: darkMode ? colors.dark : colors.white,
             }}
           >
             {weatheInfo?.weather && weatheInfo?.weather[0]?.main}
