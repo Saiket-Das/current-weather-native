@@ -70,7 +70,7 @@ export default function App() {
               source={DarkMode}
               style={{
                 ...styles.modeImg,
-                tintColor: darkMode ? "#2f2f2f" : colors.white,
+                tintColor: darkMode ? colors.dark : colors.white,
               }}
             />
 
@@ -78,7 +78,7 @@ export default function App() {
               <Text
                 style={{
                   ...styles.modeText,
-                  color: darkMode ? "#2f2f2f" : colors.white,
+                  color: darkMode ? colors.dark : colors.white,
                 }}
               >
                 Dark
