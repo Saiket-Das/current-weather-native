@@ -7,8 +7,8 @@ import Text from "../shared/AppText";
 import colors from "../../config/colors";
 
 import KMH from "../../assets/icons/wind.png";
-import Cloud from "../..assets/icons/cloud.png";
-import WaterDrop from "../..assets/icons/water-drop.png";
+import Cloud from "../../assets/icons/cloud.png";
+import WaterDrop from "../../assets/icons/water-drop.png";
 
 export default function WindInfo({ weatheInfo, darkMode }) {
   return (
