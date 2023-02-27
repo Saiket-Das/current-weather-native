@@ -7,17 +7,21 @@ import {
   StyleSheet,
 } from "react-native";
 
-import CityInfo from "../components/CityInfo";
-import WeatherInfo from "../components/WeatherInfo";
-import Menu from "../assets/icons/menu.png";
-import WindInfo from "../components/WindInfo";
-// import SearchBar from "../components/SearchBar";
-import SunRiseAndSet from "../components/SunRiseAndSet";
-import ComfortLevel from "../components/ComfortLevel";
-import Wind from "../components/Wind";
-import useLocation from "../hooks/useLocation";
 import Text from "../components/shared/AppText";
 import colors from "../config/colors";
+
+import Menu from "../assets/icons/menu.png";
+
+import useLocation from "../hooks/useLocation";
+
+import {
+  CityInfo,
+  ComfortLevel,
+  SunRiseAndSet,
+  WeatherInfo,
+  Wind,
+  WindInfo,
+} from "../components/home/index";
 
 export default function Home({
   scaleValue,

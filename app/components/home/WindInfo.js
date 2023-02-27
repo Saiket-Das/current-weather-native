@@ -2,12 +2,13 @@ import React from "react";
 import { View, Image } from "react-native";
 import { StyleSheet } from "react-native";
 
-import Text from "./shared/AppText";
+import Text from "../shared/AppText";
 
-import KMH from "../assets/icons/wind.png";
-import Cloud from "../assets/icons/cloud.png";
-import WaterDrop from "../assets/icons/water-drop.png";
-import colors from "../config/colors";
+import colors from "../../config/colors";
+
+import KMH from "../../assets/icons/wind.png";
+import Cloud from "../..assets/icons/cloud.png";
+import WaterDrop from "../..assets/icons/water-drop.png";
 
 export default function WindInfo({ weatheInfo, darkMode }) {
   return (

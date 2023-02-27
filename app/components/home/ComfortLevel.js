@@ -1,8 +1,8 @@
 import { View } from "react-native";
 import React from "react";
 import { StyleSheet } from "react-native";
-import Text from "./shared/AppText";
-import colors from "../config/colors";
+import Text from "../shared/AppText";
+import colors from "../../config/colors";
 
 export default function ComfortLevel({ darkMode, weatheInfo }) {
   const tempK = (weatheInfo?.main?.feels_like - 273).toFixed(2);

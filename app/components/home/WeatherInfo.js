@@ -1,11 +1,13 @@
 import { View, Image } from "react-native";
 import React from "react";
-import Weather from "../assets/icons/cloudy.png";
 // import { Divider } from 'react-native-elements';
 import { Divider } from "react-native-elements";
 import { StyleSheet } from "react-native";
-import Text from "./shared/AppText";
-import colors from "../config/colors";
+
+import Weather from "../../assets/icons/cloudy.png";
+
+import Text from "../shared/AppText";
+import colors from "../../config/colors";
 
 export default function WeatherInfo({ weatheInfo, darkMode }) {
   const tempK = (weatheInfo?.main?.temp - 273).toFixed(2);

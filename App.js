@@ -3,7 +3,6 @@ import { useRef, useState } from "react";
 import {
   Animated,
   Image,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
