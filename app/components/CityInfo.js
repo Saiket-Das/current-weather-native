@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
-import Text from "./common/AppText";
+import Text from "./shared/AppText";
 import colors from "../config/colors";
 
 export default function CityInfo({ weatheInfo, darkMode, currentTime }) {

@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image } from "react-native";
 import { StyleSheet } from "react-native";
 
-import Text from "./common/AppText";
+import Text from "./shared/AppText";
 
 import KMH from "../assets/icons/wind.png";
 import Cloud from "../assets/icons/cloud.png";

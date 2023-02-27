@@ -13,7 +13,7 @@ import {
 import Home from "./app/screens/Home";
 import DarkMode from "./app/assets/icons/dark-mode.png";
 import colors from "./app/config/colors";
-import Screen from "./app/components/common/Screen";
+import Screen from "./app/components/shared/Screen";
 
 export default function App() {
   const [showMenu, setShowMenu] = useState(false);

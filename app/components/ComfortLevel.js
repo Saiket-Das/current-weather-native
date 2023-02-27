@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import React from "react";
 import { StyleSheet } from "react-native";
-import Text from "./common/AppText";
+import Text from "./shared/AppText";
 import colors from "../config/colors";
 
 export default function ComfortLevel({ darkMode, weatheInfo }) {

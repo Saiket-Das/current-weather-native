@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { Image } from "react-native";
 import Sun from "../assets/icons/wind-power.png";
-import Text from "./common/AppText";
+import Text from "./shared/AppText";
 import colors from "../config/colors";
 
 export default function Wind({ darkMode, weatheInfo }) {
