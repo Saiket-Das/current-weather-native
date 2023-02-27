@@ -30,7 +30,7 @@ export default function Wind({ darkMode, weatheInfo }) {
           padding: 15,
           fontSize: 15,
           fontWeight: "500",
-          color: darkMode ? colors.lightGray : colors.white,
+          color: darkMode ? colors.dark : colors.white,
         }}
       >
         Wind
@@ -57,7 +57,7 @@ export default function Wind({ darkMode, weatheInfo }) {
           <View>
             <Text
               style={{
-                color: darkMode ? colors.lightGray : colors.white,
+                color: darkMode ? colors.dark : colors.white,
               }}
             >
               Direction: {windDirection}
@@ -67,7 +67,7 @@ export default function Wind({ darkMode, weatheInfo }) {
           <View>
             <Text
               style={{
-                color: darkMode ? colors.lightGray : colors.white,
+                color: darkMode ? colors.dark : colors.white,
               }}
             >
               Speed: {Math.round(weatheInfo.wind?.speed * 1.60934) + "KM/hr"}

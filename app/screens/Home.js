@@ -58,7 +58,7 @@ export default function Home({
 
   const getWeatheInfo = async () => {
     const weatherURL =
-      await `https://api.openweathermap.org/data/2.5/weather?lat=${location?.latitude}&lon=${location?.longitude}&appid=${process.env.GET_WAETHER_API_KEY}`;
+      await `https://api.openweathermap.org/data/2.5/weather?lat=${location?.latitude}&lon=${location?.longitude}&appid=${process.env.GET_WEATHER_API_KEY}`;
     // const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.GET_WAETHER_API_KEY}`;
 
     return fetch(weatherURL)

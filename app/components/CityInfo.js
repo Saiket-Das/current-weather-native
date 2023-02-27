@@ -18,7 +18,7 @@ export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
       <Text
         style={{
           fontSize: 14,
-          color: darkMode ? colors.lightGray : colors.white,
+          color: darkMode ? colors.lightDark : colors.white,
         }}
       >
         Today
@@ -29,7 +29,7 @@ export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
           fontSize: 26,
           fontWeight: "700",
           marginTop: 3,
-          color: darkMode ? colors.lightGray : colors.white,
+          color: darkMode ? colors.dark : colors.white,
         }}
       >
         {weatheInfo?.name}
@@ -40,7 +40,7 @@ export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
           fontSize: 14,
           marginTop: 5,
           opacity: 0.8,
-          color: darkMode ? colors.lightGray : colors.white,
+          color: darkMode ? colors.lightDark : colors.white,
         }}
       >
         {currentDate}
