@@ -3,10 +3,19 @@ import React from "react";
 import Text from "../shared/AppText";
 import colors from "../../config/colors";
 
-export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
+export default function CityInfo({ weatheInfo, darkMode }) {
   let todayUnix = weatheInfo?.sys?.sunrise;
   let todayDate = new Date(todayUnix * 1000);
 
+  let weekday = [
+    "Sundaye",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ][new Date().getDay()];
   const date = todayDate.getDate();
   const month = todayDate.getMonth();
   const condtionalMonth = month >= 10 ? month + 1 : "0" + (month + 1);
@@ -21,7 +30,7 @@ export default function CityInfo({ weatheInfo, darkMode, currentTime }) {
           color: darkMode ? colors.lightDark : colors.white,
         }}
       >
-        Today
+        {weekday}
       </Text>
 
       <Text

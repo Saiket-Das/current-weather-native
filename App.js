@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
   modeImg: {
     width: 28,
     height: 28,
+    marginLeft: 10,
   },
 
   modeText: {
